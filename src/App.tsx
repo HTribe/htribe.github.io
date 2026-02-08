@@ -1,147 +1,15 @@
-import { SectionCard, type SectionCardProps } from './components/SectionCard'
-import { EventItem, type EventItemProps } from './components/EventItem'
-import {
-  PartnerOrganizationItem,
-  type PartnerOrganizationItemProps,
-} from './components/PartnerOrganizationItem'
+import { SectionCard } from './components/SectionCard'
+import { EventItem } from './components/EventItem'
+import { Header } from './components/Header'
+import { PartnerOrganizationItem } from './components/PartnerOrganizationItem'
+import { events, partnerOrganizations, sections } from './data/home'
 
 function App() {
-  const partnerOrganizations = [
-    {
-      name: 'Clearbot',
-      logoSrc: '/vite.svg',
-      href: '#design',
-    },
-    {
-      name: 'DimSum Labs',
-      logoSrc: '/vite.svg',
-      href: '#recruitment',
-    },
-  ] satisfies PartnerOrganizationItemProps[]
-
-  const events = [
-    {
-      category: 'Community',
-      date: 'Feb 10',
-      description: 'Weekly build jam: ship something small.',
-      href: '#community',
-      ctaLabel: 'Open',
-    },
-    {
-      category: 'Design',
-      date: 'Feb 14',
-      description: 'Showcase: a clean onboarding flow.',
-      href: '#design',
-      ctaLabel: 'Open',
-    },
-    {
-      category: 'Recruitment',
-      date: 'Feb 18',
-      description: 'Looking for a React dev for a 2-week sprint.',
-      href: '#recruitment',
-      ctaLabel: 'Open',
-    },
-  ] satisfies EventItemProps[]
-
-  const sections = [
-    {
-      id: 'community',
-      eyebrow: 'Community',
-      eyebrowClassName: 'text-[rgb(16,72,98)]',
-      title: 'Find your people.',
-      description:
-        'Join discussions, share progress, and get feedback from builders who actually ship.',
-      bullets: [
-        'Topic channels for projects and interests',
-        'Weekly prompts to keep momentum',
-        'Member spotlights and wins',
-      ],
-      bulletDotClassName: 'bg-[rgb(16,72,98)]',
-      actions: [
-        {
-          label: 'Browse community',
-          href: '#',
-          variant: 'secondary',
-        },
-      ],
-    },
-    {
-      id: 'design',
-      eyebrow: 'Design',
-      eyebrowClassName: 'text-[rgb(16,72,98)]',
-      title: 'Make it feel right.',
-      description:
-        'From rough ideas to polished flows—share your work and improve fast with structured critique.',
-      bullets: [
-        'Design galleries and case studies',
-        'Feedback templates for clarity',
-        'Components, tokens, and UI patterns',
-      ],
-      bulletDotClassName: 'bg-[rgb(16,72,98)]',
-      actions: [
-        {
-          label: 'View design work',
-          href: '#',
-          variant: 'secondary',
-        },
-      ],
-    },
-    {
-      id: 'recruitment',
-      eyebrow: 'Recruitment',
-      eyebrowClassName: 'text-[rgb(16,72,98)]',
-      title: 'Build teams that ship.',
-      description:
-        'Post roles, find collaborators, and match with people based on real work—not buzzwords.',
-      bullets: [
-        'Short-term sprints or long-term roles',
-        'Portfolios and proof-of-work',
-        'Clear expectations and time commitment',
-      ],
-      bulletDotClassName: 'bg-[rgb(16,72,98)]',
-      actions: [
-        {
-          label: 'Create a listing',
-          href: '#',
-          variant: 'primary',
-        },
-        {
-          label: 'Browse roles',
-          href: '#',
-          variant: 'secondary',
-        },
-      ],
-    },
-  ] satisfies SectionCardProps[]
-
   return (
     <div className="min-h-screen bg-[rgb(255,253,241)] text-[rgb(16,72,98)]">
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(60%_60%_at_50%_0%,rgba(16,72,98,0.18),rgba(255,253,241,0))]" />
 
-      <header className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <a href="#" className="text-lg font-semibold tracking-tight">
-          HTribe
-        </a>
-        <nav className="hidden items-center gap-6 text-sm text-[rgb(16,72,98)]/80 md:flex">
-          <a className="hover:text-[rgb(16,72,98)]" href="#community">
-            Community
-          </a>
-          <a className="hover:text-[rgb(16,72,98)]" href="#design">
-            Design
-          </a>
-          <a className="hover:text-[rgb(16,72,98)]" href="#recruitment">
-            Recruitment
-          </a>
-        </nav>
-        <div className="flex items-center gap-3">
-          <a
-            href="#recruitment"
-            className="rounded-xl bg-[rgb(16,72,98)] px-4 py-2 text-sm font-medium text-[rgb(255,253,241)] shadow-sm hover:bg-[rgb(14,62,85)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[rgb(16,72,98)]"
-          >
-            Join
-          </a>
-        </div>
-      </header>
+      <Header />
 
       <main>
         <section className="mx-auto max-w-6xl px-6 pb-14 pt-10 md:pb-20 md:pt-16">

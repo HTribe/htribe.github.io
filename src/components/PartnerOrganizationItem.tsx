@@ -15,7 +15,6 @@ export function PartnerOrganizationItem({ name, logoSrc, href }: PartnerOrganiza
       />
       <div className="min-w-0">
         <p className="truncate text-sm font-medium">{name}</p>
-        <p className="text-xs text-[rgb(16,72,98)]/60">Partner organization</p>
       </div>
     </div>
   );

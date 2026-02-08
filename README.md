@@ -7,6 +7,17 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
+## Deploy to GitHub Pages (GitHub Actions)
+
+This repo includes a workflow at `.github/workflows/deploy-pages.yml` that builds on pushes to `main` and deploys `dist/` to GitHub Pages.
+
+1. Push the workflow to GitHub.
+2. In your GitHub repo: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+3. Ensure your default branch is `main` (or update the workflow branch).
+
+Notes:
+- The workflow sets `BASE_PATH` to `/<repo>/` so Vite assets work on Pages.
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
